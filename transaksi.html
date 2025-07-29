@@ -1,45 +1,50 @@
-<html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <title>Form Transaksi - $Agung Gun Store$</title>
+  <meta charset="UTF-8" />
+  <title>Transaksi</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<header style="background-color: #333; color: white; padding: 10px;">
+  <header>
     <h1>Formulir Transaksi</h1>
-</header>
+  </header>
 
-<nav style="background-color: #444; padding: 10px;">
-    <a href="index.html" style="color:white; margin-right: 20px;">Produk</a>
-    <a href="transaksi.html" style="color:white; margin-right: 20px;">Transaksi</a>
-    <a href="tentang.html" style="color:white;">Tentang Kami</a>
-</nav>
+  <nav>
+    <a href="index.html">Produk</a>
+    <a href="transaksi.html">Transaksi</a>
+    <a href="tentang.html">Tentang Kami</a>
+  </nav>
 
-<main style="padding: 20px;">
-    <form>
-        <label>Nama Lengkap:</label><br>
-        <input type="text" name="nama" required><br><br>
+  <main>
+    <form onsubmit="return validateForm()">
+      <label>Nama Pembeli:</label>
+      <input type="text" name="nama" required /><br />
 
-        <label>Email:</label><br>
-        <input type="email" name="email"><br><br>
+      <label>Alamat:</label>
+      <textarea name="alamat" required></textarea><br />
 
-        <label>Pilih Senjata:</label><br>
-        <select name="senjata">
-            <option>Ak 47</option>
-        </select><br><br>
+      <label>Produk:</label>
+      <select>
+        <option value="Smartphone">Smartphone</option>
+        <option value="Laptop">Laptop</option>
+      </select><br />
 
-        <label>Tanggal Pemesanan:</label><br>
-        <input type="date" name="tanggal"><br><br>
+      <label>Jumlah:</label>
+      <input type="number" name="jumlah" min="1" required /><br />
 
-        <label>Catatan Tambahan:</label><br>
-        <textarea name="catatan" rows="4" cols="40"></textarea><br><br>
+      <label>Metode Pembayaran:</label>
+      <input type="radio" name="pembayaran" value="COD" checked /> COD
+      <input type="radio" name="pembayaran" value="Transfer" /> Transfer Bank<br />
 
-        <input type="submit" value="Kirim Pesanan">
+      <button type="submit">Kirim</button>
     </form>
-</main>
+  </main>
 
-<footer style="background-color: #333; color: white; text-align: center; padding: 10px;">
-    &copy; $Agung gun store$
-</footer>
+  <footer>
+    <p>&copy; Agung Electro</p>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
